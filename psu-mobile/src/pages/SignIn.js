@@ -1,4 +1,4 @@
-import React, { Component } from "React";
+import React, { Component } from "react";
 import "./style.css";
 
 class SignIn extends Component {
@@ -19,7 +19,7 @@ class SignIn extends Component {
         return (
             <div>
                 <div className="psuLogo">
-                    {/* lionpath logo here */}
+                    <img src={require("../images/LionPATH w Icon-PRIMARY Use-2c(287+285)-no acronym.jpg")} alt="lionpath logo"/>
                 </div>
                 <div className="loginForm">
                     {/* login form here */}
@@ -34,8 +34,21 @@ class SignIn extends Component {
                         onChange={this.handleInputChange}
                         />
                     </div>
+                    <div className="inputField">
+                        {/* <span className="username">User ID</span> */}
+                        <input 
+                        className="form-control"
+                        type="text"
+                        placeholder="Password"
+                        name="password"
+                        value={this.state.password}
+                        onChange={this.handleInputChange}
+                        />
+                    </div>
                 </div>
             </div>
         )
     }
 }
+
+export default SignIn;
