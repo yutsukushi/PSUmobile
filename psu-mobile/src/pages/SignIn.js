@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import "./style.css";
 import "./reset.css";
@@ -19,7 +20,7 @@ class SignIn extends Component {
 
     render() {
         return (
-            <div>
+            <div className="wrapper">
                 <Container>
                     <Row>
                         <Col>
@@ -44,6 +45,14 @@ class SignIn extends Component {
                                         onChange={this.handleInputChange}
                                         />
                                     </div>
+                                    <div className="checkWrapper">
+                                        <label className="rememberUser"> 
+                                            <input type="checkbox" 
+                                                name="checkbox" 
+                                                value="rememberUser"/> 
+                                                Remember User ID
+                                        </label>
+                                    </div>
                                     <div className="inputField">
                                         {/* <span className="username">User ID</span> */}
                                         <input 
@@ -54,6 +63,9 @@ class SignIn extends Component {
                                         value={this.state.password}
                                         onChange={this.handleInputChange}
                                         />
+                                        <Link 
+                                        to="/signinhelp"
+                                        className="troubleSignIn">Trouble signing in?</Link>
                                     </div>
                                     <div className="buttonContainer">
                                         <Button
